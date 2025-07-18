@@ -3,7 +3,7 @@ import { QuizContext } from './Quiz';
 import QuizAnswer from './QuizAnswer';
 
 type Answer = {
-	answer: string;
+	text: string;
 	correct?: boolean;
 };
 
@@ -43,12 +43,12 @@ export default function QuizQuestion() {
 			answersArray.map((answer: string) => {
 				if (answer === correctAnswer) {
 					return {
-						answer,
+						text: answer,
 						correct: true,
 					};
 				} else {
 					return {
-						answer,
+						text: answer,
 						correct: false,
 					};
 				}
@@ -82,7 +82,7 @@ export default function QuizQuestion() {
 			<div className="quiz-answer-container">
 				{answers.map((answer, index) => (
 					<QuizAnswer key={index} correct={answer.correct}>
-						{answer.answer}
+						{answer.text}
 					</QuizAnswer>
 				))}
 			</div>
